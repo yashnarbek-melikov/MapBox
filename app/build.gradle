@@ -71,4 +71,11 @@ dependencies {
 
     // workManager
     implementation 'androidx.work:work-runtime:2.8.0'
+
+    //Lottie
+    implementation 'com.airbnb.android:lottie:5.0.1'
+
+    //Property delegate
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate:1.5.3'
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.6'
 }

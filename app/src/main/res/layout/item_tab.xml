@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/linear"
+    android:background="@drawable/tab_card_background">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textSize="@dimen/_13ssp"
+            android:fontFamily="@font/roboto_medium"
+            android:id="@+id/text"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vocabulary"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -279,6 +279,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:foreground="?attr/selectableItemBackground"
                     android:layout_width="@dimen/_46sdp"
                     android:layout_height="@dimen/_46sdp"
                     android:background="@drawable/card_color_light">
@@ -347,6 +348,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:foreground="?attr/selectableItemBackground"
                     android:id="@+id/rocket"
                     android:layout_width="@dimen/_46sdp"
                     android:layout_height="@dimen/_46sdp"
@@ -386,6 +388,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:foreground="?attr/selectableItemBackground"
                     android:layout_width="@dimen/_46sdp"
                     android:layout_height="@dimen/_46sdp"
                     android:background="@drawable/card_color_light">

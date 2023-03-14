@@ -29,5 +29,26 @@
         android:id="@+id/tripsFragment"
         android:name="com.example.mapbox.ui.TripsFragment"
         android:label="fragment_trips"
-        tools:layout="@layout/fragment_trips" />
+        tools:layout="@layout/fragment_trips" >
+        <action
+            android:id="@+id/action_tripsFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.example.mapbox.ui.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" />
+    <fragment
+        android:id="@+id/oneTripsFragment"
+        android:name="com.example.mapbox.ui.OneTripsFragment"
+        android:label="fragment_one_trips"
+        tools:layout="@layout/fragment_one_trips" >
+    </fragment>
+    <fragment
+        android:id="@+id/allTripsFragment"
+        android:name="com.example.mapbox.ui.AllTripsFragment"
+        android:label="fragment_all_trips"
+        tools:layout="@layout/fragment_all_trips" >
+    </fragment>
 </navigation>

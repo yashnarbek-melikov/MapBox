@@ -1,74 +1,123 @@
 package com.example.mapbox.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.example.mapbox.adapters.LocationAdapter
+import androidx.navigation.fragment.findNavController
+import androidx.work.*
+import com.example.mapbox.R
+import com.example.mapbox.adapters.recycler.LocationAdapter
+import com.example.mapbox.adapters.viewpager.ViewPagerAdapter
 import com.example.mapbox.databinding.FragmentTripsBinding
+import com.example.mapbox.databinding.ItemTabBinding
 import com.example.mapbox.repository.LocationRepository
 import com.example.mapbox.room.AppDatabase
+import com.example.mapbox.room.entity.LocationEntity
 import com.example.mapbox.utils.LocationResource
+import com.example.mapbox.utils.MyNavOptions
 import com.example.mapbox.viewmodels.LocationViewModel
 import com.example.mapbox.viewmodels.LocationViewModelFactory
+import com.example.mapbox.workmanager.LocationWorkManager
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
 
 
 class TripsFragment : Fragment() {
 
     private var _binding: FragmentTripsBinding? = null
     private val binding get() = _binding!!
-    private lateinit var locationAdapter: LocationAdapter
-    private lateinit var locationViewModel: LocationViewModel
+    private lateinit var viewPagerAdapter: ViewPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        locationViewModel = ViewModelProvider(
-            this,
-            LocationViewModelFactory(
-                LocationRepository(
-                    AppDatabase.getInstance(requireContext()).locationDao()
-                )
-            )
-        )[LocationViewModel::class.java]
-
-        locationAdapter = LocationAdapter()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.rv.adapter = locationAdapter
-        loadUi()
+        viewPagerAdapter = ViewPagerAdapter(this)
+
+        binding.apply {
+            viewPager2.adapter = viewPagerAdapter
+
+            backCard.setOnClickListener {
+                findNavController().popBackStack()
+            }
+        }
+        tabLayoutMediator()
+        tabSelectedListener()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTripsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    private fun loadUi() {
-        lifecycleScope.launch {
-            locationViewModel.getLocations().collect {
-                when (it) {
-                    is LocationResource.Loading -> {
+    private fun tabLayoutMediator() {
+        TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
+            tab.text = getPagerList()[position]
 
-                    }
-                    is LocationResource.Error -> {
-                    }
-                    is LocationResource.Success -> {
-                        locationAdapter.submitList(it.locationEntities)
-                    }
-                }
+            val itemTabBinding = ItemTabBinding.inflate(layoutInflater)
+            itemTabBinding.text.text = tab.text
+            if (position == 0) {
+                itemTabBinding.linear.background = ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.tab_card_background
+                )
+                itemTabBinding.text.setTextColor(Color.BLACK)
+            } else {
+                itemTabBinding.text.setTextColor(Color.BLACK)
+                itemTabBinding.linear.background = ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.tab_unselected_color
+                )
             }
-        }
+            tab.customView = itemTabBinding.root
+        }.attach()
+    }
+
+    private fun tabSelectedListener() {
+        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                val itemTabBinding = ItemTabBinding.bind(tab?.customView!!)
+                itemTabBinding.linear.background = ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.tab_card_background
+                )
+                itemTabBinding.text.setTextColor(Color.BLACK)
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                val itemTabBinding = ItemTabBinding.bind(tab?.customView!!)
+                itemTabBinding.text.setTextColor(Color.BLACK)
+                itemTabBinding.linear.background = ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.tab_unselected_color
+                )
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+
+            }
+
+        })
+    }
+    private fun getPagerList(): ArrayList<String> {
+        val list = ArrayList<String>()
+        list.add("One trip")
+        list.add("All trips")
+        return list
     }
 
     override fun onDestroyView() {

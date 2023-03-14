@@ -6,11 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.mapbox.room.dao.LocationDao
-import com.example.mapbox.room.entity.DateConverter
+import com.example.mapbox.room.entity.CalendarTypeConverter
 import com.example.mapbox.room.entity.LocationEntity
 
 @Database(entities = [LocationEntity::class], version = 1)
-@TypeConverters(DateConverter::class)
+@TypeConverters(CalendarTypeConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun locationDao(): LocationDao

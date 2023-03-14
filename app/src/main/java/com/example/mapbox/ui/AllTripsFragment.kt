@@ -1,22 +1,18 @@
 package com.example.mapbox.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.addCallback
-import androidx.lifecycle.lifecycleScope
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.mapbox.R
-import com.example.mapbox.databinding.FragmentSplashBinding
+import com.example.mapbox.databinding.FragmentAllTripsBinding
 import com.example.mapbox.utils.MyNavOptions
-import kotlinx.coroutines.delay
 
+class AllTripsFragment : Fragment() {
 
-class SplashFragment : Fragment() {
-
-    private var _binding: FragmentSplashBinding? = null
+    private var _binding: FragmentAllTripsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,19 +21,26 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        lifecycleScope.launchWhenStarted {
-            delay(2000)
-            findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+        binding.cardAll.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_tripsFragment_to_locationFragment,
+                null,
+                MyNavOptions.getNavOptions()
+            )
         }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentSplashBinding.inflate(inflater, container, false)
+    ): View {
+        _binding = FragmentAllTripsBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.locatorLottie.playAnimation()
     }
 
     override fun onDestroyView() {

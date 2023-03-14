@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.AllTripsFragment">
+
+    <androidx.cardview.widget.CardView
+        android:foreground="?attr/selectableItemBackground"
+        android:id="@+id/card_all"
+        android:layout_marginVertical="@dimen/_3sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        app:cardBackgroundColor="#F8F8F8"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="0dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/locator_lottie"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_rawRes="@raw/locator" />
+
+            <TextView
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="See all trips in one map view"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="@font/roboto_medium"/>
+
+            <ImageView
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_12sdp"
+                android:src="@drawable/ic_right"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
