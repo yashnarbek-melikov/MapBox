@@ -73,13 +73,12 @@ class LanguageFragment : Fragment() {
                     img3.hide()
                 }
 
-
                 card1.setOnClickListener {
                     if (language != "ru") {
                         Lingver.getInstance().setLocale(requireContext(), "ru")
                         language = "ru"
                         clear()
-                        select(card3, text3, img3)
+                        select(card1, text1, img1)
                     }
                 }
                 card3.setOnClickListener {

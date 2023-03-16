@@ -137,6 +137,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:foreground="?attr/selectableItemBackground"
+                android:id="@+id/notifications_card"
                 android:layout_width="@dimen/_30sdp"
                 android:layout_height="@dimen/_30sdp"
                 app:cardBackgroundColor="@color/white"

@@ -93,6 +93,10 @@ class HomeFragment : Fragment() {
             lightning.setOnClickListener {
                 lightningSetOnClickListener(mySharedPreference)
             }
+
+            notificationsCard.setOnClickListener {
+                Toast.makeText(requireContext(), "Notifications clicked", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
