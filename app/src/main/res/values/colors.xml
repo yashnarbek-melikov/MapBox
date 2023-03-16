@@ -8,6 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="dark_black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_dark">#FFFFFFFF</color>
+
+    <color name="back_card">#FF000000</color>
 
     <color name="white_black">#FFFFFFFF</color>
 
@@ -29,4 +32,8 @@
 
     <color name="navigation_item_color">#DEDEDE</color>
     <color name="navigation_text_color">#4D4D4D</color>
+
+    <color name="card_dark_light">#F8F8F8</color>
+
+    <color name="selected">#475AD7</color>
 </resources>

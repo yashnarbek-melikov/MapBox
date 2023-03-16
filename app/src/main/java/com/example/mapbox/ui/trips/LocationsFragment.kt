@@ -19,10 +19,7 @@ import com.example.mapbox.R
 import com.example.mapbox.databinding.FragmentLocationsBinding
 import com.example.mapbox.repository.LocationRepository
 import com.example.mapbox.room.AppDatabase
-import com.example.mapbox.utils.LocationResource
-import com.example.mapbox.utils.mapUtils
-import com.example.mapbox.utils.minusSetOnClickListener
-import com.example.mapbox.utils.plusSetOnClickListener
+import com.example.mapbox.utils.*
 import com.example.mapbox.viewmodels.LocationViewModel
 import com.example.mapbox.viewmodels.LocationViewModelFactory
 import com.mapbox.geojson.Point
@@ -42,9 +39,12 @@ class LocationsFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var mapView: MapView
     private lateinit var locationViewModel: LocationViewModel
+    private lateinit var mySharedPreference: MySharedPreference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        mySharedPreference = MySharedPreference(requireContext())
 
         locationViewModel = ViewModelProvider(
             this,
@@ -84,10 +84,18 @@ class LocationsFragment : Fragment() {
             ).zoom(10.0)
         }, MapAnimationOptions.mapAnimationOptions { duration(2000) })
 
-        mapView.getMapboxMap().loadStyleUri(
-            Style.MAPBOX_STREETS
-        ) {
-            loadUi()
+        if (mySharedPreference.getPreferences("isDark") == "1") {
+            mapView.getMapboxMap().loadStyleUri(
+                Style.DARK
+            ) {
+                loadUi()
+            }
+        } else {
+            mapView.getMapboxMap().loadStyleUri(
+                Style.MAPBOX_STREETS
+            ) {
+                loadUi()
+            }
         }
     }
 

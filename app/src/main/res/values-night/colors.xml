@@ -15,4 +15,10 @@
     <color name="bottom_icon_color_3">#6F6F6F</color>
 
     <color name="white_black">#FF000000</color>
+
+    <color name="white_dark">#222222</color>
+
+    <color name="back_card">#FFFFFF</color>
+
+    <color name="card_dark_light">#363636</color>
 </resources>

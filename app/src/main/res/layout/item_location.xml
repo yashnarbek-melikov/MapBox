@@ -8,7 +8,7 @@
     android:layout_marginHorizontal="@dimen/_10sdp"
     android:layout_marginVertical="@dimen/_3sdp"
     android:orientation="vertical"
-    app:cardBackgroundColor="#F8F8F8"
+    app:cardBackgroundColor="@color/card_dark_light"
     app:cardCornerRadius="@dimen/_10sdp"
     app:cardElevation="0dp">
 
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_medium"
                 android:textSize="@dimen/_11ssp"
-                android:text="Place: "
+                android:text="@string/place"
                 android:textColor="@color/black" />
 
             <TextView
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Time: "
+                android:text="@string/time"
                 android:textColor="@color/black" />
 
             <TextView
@@ -75,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Date: "
+                android:text="@string/date"
                 android:textColor="@color/black" />
 
             <TextView

@@ -16,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.mapbox.R
 import com.example.mapbox.databinding.FragmentLocationBinding
 import com.example.mapbox.room.entity.LocationEntity
+import com.example.mapbox.utils.MySharedPreference
 import com.example.mapbox.utils.mapUtils
 import com.example.mapbox.utils.minusSetOnClickListener
 import com.example.mapbox.utils.plusSetOnClickListener
@@ -36,12 +37,14 @@ class LocationFragment : Fragment() {
     private var _binding: FragmentLocationBinding? = null
     private val binding get() = _binding!!
     private lateinit var mapView: MapView
+    private lateinit var mySharedPreference: MySharedPreference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getSerializable(ARG_PARAM1) as LocationEntity
         }
+        mySharedPreference = MySharedPreference(requireContext())
     }
 
     override fun onCreateView(
@@ -88,9 +91,19 @@ class LocationFragment : Fragment() {
             ).zoom(14.0)
         }, MapAnimationOptions.mapAnimationOptions { duration(2000) })
 
-        mapView.getMapboxMap().loadStyleUri(
-            Style.MAPBOX_STREETS
-        ) { addAnnotationToMap() }
+        if (mySharedPreference.getPreferences("isDark") == "1") {
+            mapView.getMapboxMap().loadStyleUri(
+                Style.DARK
+            ) {
+                addAnnotationToMap()
+            }
+        } else {
+            mapView.getMapboxMap().loadStyleUri(
+                Style.MAPBOX_STREETS
+            ) {
+                addAnnotationToMap()
+            }
+        }
     }
 
     private fun addAnnotationToMap() {

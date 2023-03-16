@@ -1,17 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">MyTaxi MapBox</string>
     <string name="mapbox_access_token">pk.eyJ1IjoieWFzaG5hcjAyIiwiYSI6ImNsZXd4MzZpNDBqODQzdmtjYWRydWw3MmEifQ.6u-u9me4CD2F3-fddF4HRw</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="name">Yashnarbek</string>
     <string name="phone_number">+998906772149</string>
 
-    <string name="svoboden">Свободен</string>
-    <string name="zanyat">Занят</string>
+    <string name="svoboden">Free</string>
+    <string name="zanyat">Busy</string>
 
-    <string name="zakazi">Заказы</string>
-    <string name="bordyur">Бордюр</string>
-    <string name="tarifi">Тарифы</string>
+    <string name="zakazi">Orders</string>
+    <string name="bordyur">Border</string>
+    <string name="tarifi">Rates</string>
 
     <string name="morning">Good Morning</string>
 
@@ -53,4 +52,20 @@
     <string name="english">English</string>
     <string name="russian">Russian</string>
     <string name="uzbek">Uzbek</string>
+
+    <string name="dark_mode">Dark Mode</string>
+    <string name="light_mode">Light Mode</string>
+
+    <string name="place">Place: </string>
+    <string name="time">Time: </string>
+    <string name="date">Date: </string>
+
+    <string name="one_trip">One trip</string>
+    <string name="all_trips">All trips</string>
+
+    <string name="see_all_trips">See all trips in one map view</string>
+
+    <string name="powered_by">Powered by Mapbox</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -424,9 +424,10 @@
 
     <com.google.android.material.navigation.NavigationView
         app:itemIconTint="@color/navigation_item_color"
+        app:itemTextColor="@color/black"
         app:itemHorizontalPadding="@dimen/_20sdp"
         app:itemTextAppearance="@style/RobotoTextViewStyle"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/white_dark"
         android:theme="@style/NavigationDrawerStyle"
         app:itemIconPadding="@dimen/_12sdp"
         android:id="@+id/nav_view"
@@ -452,6 +453,7 @@
                 android:text="@string/about_app"/>
 
             <TextView
+                android:textColor="@color/black"
                 android:textSize="@dimen/_11ssp"
                 android:fontFamily="@font/roboto_regular"
                 android:layout_gravity="bottom"

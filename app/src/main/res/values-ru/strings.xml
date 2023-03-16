@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MyTaxi MapBox</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoieWFzaG5hcjAyIiwiYSI6ImNsZXd4MzZpNDBqODQzdmtjYWRydWw3MmEifQ.6u-u9me4CD2F3-fddF4HRw</string>
+
+    <string name="name">Yashnarbek</string>
+    <string name="phone_number">+998906772149</string>
+
+    <string name="svoboden">Свободен</string>
+    <string name="zanyat">Занят</string>
+
+    <string name="zakazi">Заказы</string>
+    <string name="bordyur">Бордюр</string>
+    <string name="tarifi">Тарифы</string>
+
+    <string name="morning">Доброе утро</string>
+
+    <string name="trips">Поездки</string>
+    <string name="payment">Оплата</string>
+    <string name="no_payments_now">Нет платежей сейчас</string>
+
+    <string name="favorite">Избранные адреса</string>
+    <string name="home">Дом</string>
+    <string name="work">Работа</string>
+    <string name="new_address">Новый адрес</string>
+
+    <string name="promo">Промо-код</string>
+    <string name="code">Получить промокод</string>
+
+    <string name="notifications">Уведомления</string>
+    <string name="no_new_notifications">Нет новых уведомлений</string>
+
+    <string name="support">Поддерживать</string>
+    <string name="help">Помощь</string>
+    <string name="write_support">Пишите в поддержку</string>
+    <string name="call">Вызов</string>
+    <string name="telegram">Телеграм</string>
+    <string name="report_error">Сообщить об ошибке</string>
+
+    <string name="settings">Настройки</string>
+    <string name="language">Язык приложения</string>
+    <string name="language_name">Английский</string>
+
+    <string name="map_type">Тип карты</string>
+    <string name="map_type_name">По умолчанию</string>
+
+    <string name="mode">Режим</string>
+    <string name="mode_name">Свет</string>
+
+    <string name="about_app">О приложении</string>
+    <string name="version">Версия 1.0.0</string>
+
+    <string name="english">Английский</string>
+    <string name="russian">Русский</string>
+    <string name="uzbek">узбекский</string>
+
+    <string name="dark_mode">Темный режим</string>
+    <string name="light_mode">Легкий режим</string>
+
+    <string name="place">Место: </string>
+    <string name="time">Время: </string>
+    <string name="date">Дата: </string>
+
+    <string name="one_trip">Одна поездка</string>
+    <string name="all_trips">Все поездки</string>
+
+    <string name="see_all_trips">Просматривайте все поездки на одной карте</string>
+
+    <string name="powered_by">Работает на Mapbox</string>
+</resources>

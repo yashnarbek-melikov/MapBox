@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MyTaxi MapBox</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoieWFzaG5hcjAyIiwiYSI6ImNsZXd4MzZpNDBqODQzdmtjYWRydWw3MmEifQ.6u-u9me4CD2F3-fddF4HRw</string>
+
+    <string name="name">Yashnarbek</string>
+    <string name="phone_number">+998906772149</string>
+
+    <string name="svoboden">Bosh</string>
+    <string name="zanyat">Band</string>
+
+    <string name="zakazi">Zakazlar</string>
+    <string name="bordyur">Chegara</string>
+    <string name="tarifi">Tariflar</string>
+
+    <string name="morning">Assalomu alaykum</string>
+
+    <string name="trips">Safarlar tarixi</string>
+    <string name="payment">Tolov</string>
+    <string name="no_payments_now">Hozircha tolovlar yoq</string>
+
+    <string name="favorite">Doimiy manzillar</string>
+    <string name="home">Uy</string>
+    <string name="work">Ish</string>
+    <string name="new_address">Yangi manzil</string>
+
+    <string name="promo">Chegirma kodi</string>
+    <string name="code">Chegirma kodi olish</string>
+
+    <string name="notifications">Yangiliklar</string>
+    <string name="no_new_notifications">Hozircha yangiliklar yoq</string>
+
+    <string name="support">Qollab-quvvatlash</string>
+    <string name="help">Yordam</string>
+    <string name="write_support">Supportga yozish</string>
+    <string name="call">Telefon qilish</string>
+    <string name="telegram">Telegram</string>
+    <string name="report_error">Xatolik haqida xabar berish</string>
+
+    <string name="settings">Sozlamalar</string>
+    <string name="language">Dastur tili</string>
+    <string name="language_name">English</string>
+
+    <string name="map_type">Xarita turi</string>
+    <string name="map_type_name">Xarita</string>
+
+    <string name="mode">Rejim</string>
+    <string name="mode_name">Tongi</string>
+
+    <string name="about_app">Dastur haqida</string>
+    <string name="version">Versiya 1.0.0</string>
+
+    <string name="english">Ingliz tili</string>
+    <string name="russian">Rus tili</string>
+    <string name="uzbek">Uzbek tili</string>
+
+    <string name="dark_mode">Tungi rejim</string>
+    <string name="light_mode">Tongi rejim</string>
+
+    <string name="place">Joy: </string>
+    <string name="time">Vaqt: </string>
+    <string name="date">Sana: </string>
+
+    <string name="one_trip">Bitta safar</string>
+    <string name="all_trips">Hamma safarlar</string>
+
+    <string name="see_all_trips">Hamma safarlarni bitta xaritada korish</string>
+
+    <string name="powered_by">Mapbox orqali tayyorlangan</string>
+</resources>

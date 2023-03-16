@@ -64,7 +64,7 @@ class TripsFragment : Fragment() {
                 )
                 itemTabBinding.text.setTextColor(Color.BLACK)
             } else {
-                itemTabBinding.text.setTextColor(Color.BLACK)
+                itemTabBinding.text.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
                 itemTabBinding.linear.background = ContextCompat.getDrawable(
                     requireContext(),
                     R.drawable.tab_unselected_color
@@ -87,7 +87,7 @@ class TripsFragment : Fragment() {
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
                 val itemTabBinding = ItemTabBinding.bind(tab?.customView!!)
-                itemTabBinding.text.setTextColor(Color.BLACK)
+                itemTabBinding.text.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
                 itemTabBinding.linear.background = ContextCompat.getDrawable(
                     requireContext(),
                     R.drawable.tab_unselected_color
@@ -97,13 +97,12 @@ class TripsFragment : Fragment() {
             override fun onTabReselected(tab: TabLayout.Tab?) {
 
             }
-
         })
     }
     private fun getPagerList(): ArrayList<String> {
         val list = ArrayList<String>()
-        list.add("One trip")
-        list.add("All trips")
+        list.add(getString(R.string.one_trip))
+        list.add(getString(R.string.all_trips))
         return list
     }
 

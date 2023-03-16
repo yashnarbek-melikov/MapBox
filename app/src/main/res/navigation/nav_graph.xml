@@ -132,4 +132,9 @@
         android:name="com.example.mapbox.ui.settings.ModeFragment"
         android:label="fragment_mode"
         tools:layout="@layout/fragment_mode" />
+    <fragment
+        android:id="@+id/startLanguageFragment"
+        android:name="com.example.mapbox.ui.start.StartLanguageFragment"
+        android:label="fragment_start_language"
+        tools:layout="@layout/fragment_start_language" />
 </navigation>

@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/white_dark"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.trips.AllTripsFragment">
 
@@ -13,7 +14,7 @@
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        app:cardBackgroundColor="#F8F8F8"
+        app:cardBackgroundColor="@color/card_dark_light"
         app:cardCornerRadius="@dimen/_10sdp"
         app:cardElevation="0dp">
         <LinearLayout
@@ -37,7 +38,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="See all trips in one map view"
+                android:text="@string/see_all_trips"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_13ssp"
                 android:fontFamily="@font/roboto_medium"/>
