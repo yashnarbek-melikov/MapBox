@@ -1,4 +1,4 @@
-package com.example.mapbox.ui
+package com.example.mapbox.ui.trips
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -19,9 +19,7 @@ import com.example.mapbox.room.entity.LocationEntity
 import com.example.mapbox.utils.mapUtils
 import com.example.mapbox.utils.minusSetOnClickListener
 import com.example.mapbox.utils.plusSetOnClickListener
-import com.mapbox.android.gestures.MoveGestureDetector
 import com.mapbox.geojson.Point
-import com.mapbox.maps.CameraOptions
 import com.mapbox.maps.MapView
 import com.mapbox.maps.Style
 import com.mapbox.maps.dsl.cameraOptions
@@ -30,9 +28,6 @@ import com.mapbox.maps.plugin.animation.flyTo
 import com.mapbox.maps.plugin.annotation.annotations
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationOptions
 import com.mapbox.maps.plugin.annotation.generated.createPointAnnotationManager
-import com.mapbox.maps.plugin.gestures.OnMoveListener
-import com.mapbox.maps.plugin.gestures.addOnMoveListener
-
 
 private const val ARG_PARAM1 = "key"
 
@@ -109,8 +104,8 @@ class LocationFragment : Fragment() {
             val pointAnnotationOptions: PointAnnotationOptions = PointAnnotationOptions()
                 .withPoint(
                     Point.fromLngLat(
-                        param1?.longitude ?: 41.2970818,
-                        param1?.latitude ?: 69.2495591
+                        param1?.longitude ?: 69.2495591,
+                        param1?.latitude ?: 41.2970818
                     )
                 )
                 .withIconImage(it)

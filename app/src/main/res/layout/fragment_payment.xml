@@ -15,7 +15,6 @@
         android:layout_marginStart="@dimen/_5sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/tab_layout"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
@@ -43,35 +42,30 @@
             android:layout_marginStart="@dimen/_8sdp"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center_vertical"
-            android:text="@string/trips"
+            android:text="@string/payment"
             android:textColor="@color/black"
             android:textSize="@dimen/_16ssp" />
     </LinearLayout>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_35sdp"
-        android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_2sdp"
-        android:layout_marginBottom="@dimen/_2sdp"
-        android:background="@drawable/tab_unselected_color"
-        app:layout_constraintBottom_toTopOf="@id/view_pager_2"
-        app:layout_constraintTop_toBottomOf="@id/linear"
-        app:layout_scrollFlags="scroll|enterAlways"
-        app:tabIndicatorHeight="0dp"
-        app:tabMode="fixed"
-        app:tabPaddingStart="@dimen/_3sdp"
-        app:tabPaddingEnd="@dimen/_3sdp"
-        app:tabRippleColor="@null" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:layout_marginTop="@dimen/_4sdp"
-        android:id="@+id/view_pager_2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    <ImageView
+        android:id="@+id/square"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/square"/>
+
+    <TextView
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/square"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/no_payments_now"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

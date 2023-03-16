@@ -1,10 +1,9 @@
-package com.example.mapbox.ui
+package com.example.mapbox.ui.trips
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -21,9 +20,7 @@ import com.example.mapbox.utils.LocationResource
 import com.example.mapbox.utils.MyNavOptions
 import com.example.mapbox.viewmodels.LocationViewModel
 import com.example.mapbox.viewmodels.LocationViewModelFactory
-import com.example.mapbox.workmanager.LocationWorkManager
 import kotlinx.coroutines.launch
-import java.util.concurrent.TimeUnit
 
 
 class OneTripsFragment : Fragment() {
@@ -60,7 +57,6 @@ class OneTripsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.rv.edgeEffectFactory = BounceEdgeEffectFactory()
         binding.rv.adapter = locationAdapter
         loadUi()
@@ -79,12 +75,17 @@ class OneTripsFragment : Fragment() {
             locationViewModel.getLocations().collect {
                 when (it) {
                     is LocationResource.Loading -> {
-
+                        binding.shimmerLayout.visibility = View.VISIBLE
+                        binding.shimmerLayout.startShimmer()
+                        binding.rv.visibility = View.GONE
                     }
                     is LocationResource.Error -> {
                     }
                     is LocationResource.Success -> {
-                        locationAdapter.submitList(it.locationEntities)
+                        binding.shimmerLayout.stopShimmer()
+                        binding.shimmerLayout.visibility = View.GONE
+                        binding.rv.visibility = View.VISIBLE
+                        locationAdapter.submitList(it.locationEntities.reversed())
                     }
                 }
             }

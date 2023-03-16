@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/item_view"
-    android:foreground="?attr/selectableItemBackground"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/_10sdp"
@@ -24,20 +22,18 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_50sdp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
                 android:textSize="@dimen/_11ssp"
-                android:text="Place: "
-                android:textColor="@color/black" />
+                android:background="#D1D1D1" />
 
             <TextView
+                android:background="#D1D1D1"
+                android:layout_marginLeft="@dimen/_5sdp"
                 android:textSize="@dimen/_11ssp"
                 android:id="@+id/place"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Shakhrisabz, Kashkadarya, Uzbekistane"
-                android:textColor="@color/black" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -48,20 +44,17 @@
             android:orientation="horizontal">
 
             <TextView
-                android:textSize="@dimen/_11ssp"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_50sdp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Time: "
-                android:textColor="@color/black" />
+                android:textSize="@dimen/_11ssp"
+                android:background="#D1D1D1" />
 
             <TextView
+                android:background="#D1D1D1"
+                android:layout_marginLeft="@dimen/_5sdp"
                 android:textSize="@dimen/_11ssp"
-                android:textColor="@color/black"
-                android:id="@+id/time"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="12:06" />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -71,20 +64,17 @@
             android:orientation="horizontal">
 
             <TextView
-                android:textSize="@dimen/_11ssp"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_50sdp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Date: "
-                android:textColor="@color/black" />
+                android:textSize="@dimen/_11ssp"
+                android:background="#D1D1D1" />
 
             <TextView
+                android:background="#D1D1D1"
+                android:layout_marginLeft="@dimen/_5sdp"
                 android:textSize="@dimen/_11ssp"
-                android:textColor="@color/black"
-                android:id="@+id/date"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="12.02.2022" />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
     </LinearLayout>

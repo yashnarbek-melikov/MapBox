@@ -31,6 +31,36 @@ fun Fragment.drawerNavigationSelected(navigationView: NavigationView) {
                     R.id.action_homeFragment_to_tripsFragment
                 )
             }
+            R.id.nav_payment -> {
+                findNavController().navigate(
+                    R.id.action_homeFragment_to_paymentFragment
+                )
+            }
+            R.id.nav_favorite -> {
+                findNavController().navigate(
+                    R.id.action_homeFragment_to_favoriteAdressesFragment
+                )
+            }
+            R.id.nav_promo -> {
+                findNavController().navigate(
+                    R.id.action_homeFragment_to_promoCodeFragment
+                )
+            }
+            R.id.nav_notifications -> {
+                findNavController().navigate(
+                    R.id.action_homeFragment_to_notificationsFragment
+                )
+            }
+            R.id.nav_support -> {
+                findNavController().navigate(
+                    R.id.action_homeFragment_to_supportFragment
+                )
+            }
+            R.id.nav_settings -> {
+                findNavController().navigate(
+                    R.id.action_homeFragment_to_settingsFragment
+                )
+            }
         }
         false
     }

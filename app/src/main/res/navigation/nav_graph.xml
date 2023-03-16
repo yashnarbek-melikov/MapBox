@@ -13,10 +13,28 @@
         <action
             android:id="@+id/action_homeFragment_to_tripsFragment"
             app:destination="@id/tripsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoriteAdressesFragment"
+            app:destination="@id/favoriteAdressesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_promoCodeFragment"
+            app:destination="@id/promoCodeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_supportFragment"
+            app:destination="@id/supportFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.mapbox.ui.SplashFragment"
+        android:name="com.example.mapbox.ui.start.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -27,28 +45,91 @@
     </fragment>
     <fragment
         android:id="@+id/tripsFragment"
-        android:name="com.example.mapbox.ui.TripsFragment"
+        android:name="com.example.mapbox.ui.trips.TripsFragment"
         android:label="fragment_trips"
         tools:layout="@layout/fragment_trips" >
         <action
             android:id="@+id/action_tripsFragment_to_locationFragment"
             app:destination="@id/locationFragment" />
+        <action
+            android:id="@+id/action_tripsFragment_to_locationsFragment"
+            app:destination="@id/locationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/locationFragment"
-        android:name="com.example.mapbox.ui.LocationFragment"
+        android:name="com.example.mapbox.ui.trips.LocationFragment"
         android:label="fragment_location"
         tools:layout="@layout/fragment_location" />
     <fragment
         android:id="@+id/oneTripsFragment"
-        android:name="com.example.mapbox.ui.OneTripsFragment"
+        android:name="com.example.mapbox.ui.trips.OneTripsFragment"
         android:label="fragment_one_trips"
         tools:layout="@layout/fragment_one_trips" >
     </fragment>
     <fragment
         android:id="@+id/allTripsFragment"
-        android:name="com.example.mapbox.ui.AllTripsFragment"
+        android:name="com.example.mapbox.ui.trips.AllTripsFragment"
         android:label="fragment_all_trips"
         tools:layout="@layout/fragment_all_trips" >
     </fragment>
+    <fragment
+        android:id="@+id/locationsFragment"
+        android:name="com.example.mapbox.ui.trips.LocationsFragment"
+        android:label="fragment_locations"
+        tools:layout="@layout/fragment_locations" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.mapbox.ui.payment.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/favoriteAdressesFragment"
+        android:name="com.example.mapbox.ui.favorite.FavoriteAddressFragment"
+        android:label="fragment_favorite_adresses"
+        tools:layout="@layout/fragment_favorite_adresses" />
+    <fragment
+        android:id="@+id/promoCodeFragment"
+        android:name="com.example.mapbox.ui.promocode.PromoCodeFragment"
+        android:label="fragment_promo_code"
+        tools:layout="@layout/fragment_promo_code" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.mapbox.ui.notifications.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/supportFragment"
+        android:name="com.example.mapbox.ui.support.SupportFragment"
+        android:label="fragment_support"
+        tools:layout="@layout/fragment_support" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.mapbox.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_modeFragment"
+            app:destination="@id/modeFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_mapTypeFragment"
+            app:destination="@id/mapTypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.example.mapbox.ui.settings.LanguageFragment"
+        android:label="fragment_language"
+        tools:layout="@layout/fragment_language" />
+    <fragment
+        android:id="@+id/mapTypeFragment"
+        android:name="com.example.mapbox.ui.settings.MapTypeFragment"
+        android:label="fragment_map_type"
+        tools:layout="@layout/fragment_map_type" />
+    <fragment
+        android:id="@+id/modeFragment"
+        android:name="com.example.mapbox.ui.settings.ModeFragment"
+        android:label="fragment_mode"
+        tools:layout="@layout/fragment_mode" />
 </navigation>

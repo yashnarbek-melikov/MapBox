@@ -1,4 +1,4 @@
-package com.example.mapbox.ui
+package com.example.mapbox.ui.trips
 
 import android.graphics.Color
 import android.os.Bundle
@@ -7,27 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.work.*
 import com.example.mapbox.R
-import com.example.mapbox.adapters.recycler.LocationAdapter
 import com.example.mapbox.adapters.viewpager.ViewPagerAdapter
 import com.example.mapbox.databinding.FragmentTripsBinding
 import com.example.mapbox.databinding.ItemTabBinding
-import com.example.mapbox.repository.LocationRepository
-import com.example.mapbox.room.AppDatabase
-import com.example.mapbox.room.entity.LocationEntity
-import com.example.mapbox.utils.LocationResource
-import com.example.mapbox.utils.MyNavOptions
-import com.example.mapbox.viewmodels.LocationViewModel
-import com.example.mapbox.viewmodels.LocationViewModelFactory
-import com.example.mapbox.workmanager.LocationWorkManager
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.coroutines.launch
-import java.util.concurrent.TimeUnit
 
 
 class TripsFragment : Fragment() {
